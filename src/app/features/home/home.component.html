@@ -1,0 +1,398 @@
+<main class="home-root" dir="rtl">
+  <!-- Hero Section -->
+  <section class="hero" #hero>
+    <div class="hero-inner">
+      <div class="hero-text p-5">
+        <h1 class="title text-center">منظمة الكشاف المغربي</h1>
+        <p class="subtitle">حركة شبابية تربوية توفر للفتيات والفتيان مشروعا تربويا للمساهمة في تكوينهم على المستوى الجسدي، الفكري، الاجتماعي والروحي، ليكونوا مواطنين صالحين قادرين على لعب دور مفيد في تنمية المجتمع الوطني والدولي وفقا لمبادئ الحركة الكشفية العالمية.</p>
+
+        <div class="hero-actions">
+          <button mat-raised-button color="primary" routerLink="/join">
+            <mat-icon>person_add</mat-icon>
+            انضم إلى المنظمة
+          </button>
+          <button mat-raised-button color="primary" class="btn-warning" (click)="scrollToSection('featured')">
+            <mat-icon>explore</mat-icon>
+            تعرف على قادتنا
+          </button>
+          <button mat-stroked-button routerLink="/login" class="admin-btn">
+            <mat-icon>dashboard</mat-icon>
+            المنصة الرقمية SAHI
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Statistics Section -->
+  <section class="world-stats-section">
+    <div class="world-stats-container">
+      <div class="world-stat-item" *ngFor="let stat of worldStats">
+        <div class="world-stat-icon-wrapper" [ngStyle]="{'background-color': stat.color}">
+          <mat-icon class="world-stat-icon">{{ stat.icon }}</mat-icon>
+        </div>
+        <div class="world-stat-value">{{ stat.value }}</div>
+        <div class="world-stat-label">{{ stat.label }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Organization Section -->
+  <section class="about-osm-section">
+    <div class="container">
+      <h2 class="section-title">نبذة عن المنظمة</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="about-description">
+            تأسست <strong>منظمة الكشاف المغربي</strong> سنة <strong>1969</strong> على إثر انشقاق جمعية الكشفية الحسنية، على يد أطر أشرفت على حركة الكشافة المغربية منذ سنة 1933. حصلت المنظمة على الاعتراف الرسمي من السلطات المغربية سنة <strong>1970</strong>، والتزمت منذ ذلك الحين بالعمل على نشر ممارسة الكشفية الحقيقية للجميع في كافة أرجاء المملكة المغربية.
+          </p>
+          <p class="about-description">
+            لأجيال عديدة من المواطنين، كان للحركة الكشفية تأثير حاسم في حياتهم. من بين الشخصيات والقادة الذين مروا بالحركة نجد: <strong>سي علال الفاسي، علال بن عبد الله، الشفشاوني، زرقطوني، محمد بوسطة، عباس الفاسي</strong> وغيرهم.
+          </p>
+          <p class="about-description">
+            منظمة الكشاف المغربي، الوفية لجذورها في الحركة الوطنية، تتحمل بفخر مسؤوليتها في رعاية الأجيال الجديدة. وتضم اليوم <strong>18,000 منخرط</strong> و<strong>4,500 راشد متطوع</strong>. وتتكون من <strong>128 مقاطعة</strong> موزعة على <strong>16 جهة</strong> بالمملكة.
+          </p>
+          <p class="about-description">
+            المنظمة عضو في <strong>الاتحاد الوطني للكشفية المغربية</strong>، المنتسب إلى <strong>المنظمة الكشفية العربية</strong> وكذا <strong>المنظمة العالمية للحركة الكشفية</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Goal Section -->
+  <section class="features-section" #features>
+    <h2 class="section-title">غايتنا</h2>
+    <p class="section-subtitle">تشجيع تربية وازدهار الفتيات والفتيان وفق مبادئ التكوين الشامل</p>
+    <div class="about-goal">
+      <p class="goal-text">
+        تشجيع تربية وازدهار الفتيات والفتيان وفق مبادئ التكوين الجسدي، الفكري، الأخلاقي، الاجتماعي والروحي، حسب ما أراده مؤسس الحركة الكشفية وبما يتناسب مع الواقع المغربي.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Mission Section -->
+  <section class="mission-section">
+    <div class="container">
+      <h2 class="section-title">مهمتنا</h2>
+      <p class="section-subtitle">منظمة الكشاف المغربي تعمل على تحقيق المهام التالية</p>
+      <div class="mission-grid">
+        <mat-card class="mission-card">
+          <mat-card-content>
+            <div class="mission-icon">
+              <mat-icon>support_agent</mat-icon>
+            </div>
+            <h3>دعم ومساندة الأعضاء</h3>
+            <p>دعم ومساعدة الأعضاء المنتسبين في تحقيق أهدافهم وتطوير أنشطتهم الكشفية.</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="mission-card">
+          <mat-card-content>
+            <div class="mission-icon">
+              <mat-icon>public</mat-icon>
+            </div>
+            <h3>نشر الكشفية في كل الأقاليم</h3>
+            <p>تشجيع انتشار الحركة الكشفية في جميع أنحاء التراب الوطني.</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="mission-card">
+          <mat-card-content>
+            <div class="mission-icon">
+              <mat-icon>school</mat-icon>
+            </div>
+            <h3>تنظيم المشاريع التربوية</h3>
+            <p>تنظيم مشاريع كبرى بالمغرب في المجالات التربوية والتنموية.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Commitments Section -->
+  <section class="commitments-section">
+    <div class="container">
+      <h2 class="section-title">التزاماتنا</h2>
+      <p class="section-subtitle">نعمل بشكل دائم على تحقيق هذه الالتزامات الأساسية</p>
+      <div class="commitments-list">
+        <div class="commitment-item" *ngFor="let commitment of commitments">
+          <div class="commitment-icon-wrapper">
+            <mat-icon>{{ commitment.icon }}</mat-icon>
+          </div>
+          <div class="commitment-content">
+            <h3>{{ commitment.title }}</h3>
+            <p>{{ commitment.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Principles Section -->
+  <section class="principles-section">
+    <div class="container">
+      <h2 class="section-title">مبادئنا</h2>
+      <p class="section-subtitle">نستمد توجهاتنا من المبادئ الأساسية للحركة الكشفية العالمية</p>
+      <div class="principles-grid">
+        <mat-card class="principle-card">
+          <mat-card-content>
+            <div class="principle-icon">
+              <mat-icon>mosque</mat-icon>
+            </div>
+            <h3>الواجب نحو الله</h3>
+            <p>الانخراط في المبادئ الروحية، والإخلاص للدين الذي يعبر عنها، وقبول الواجبات المترتبة عن ذلك.</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="principle-card">
+          <mat-card-content>
+            <div class="principle-icon">
+              <mat-icon>diversity_3</mat-icon>
+            </div>
+            <h3>الواجب نحو الآخرين</h3>
+            <p>الولاء للوطن، في أفق تعزيز السلام والتفاهم والتعاون على المستوى المحلي والوطني والدولي، والمساهمة في تنمية المجتمع، في احترام كرامة الإنسان وسلامة الطبيعة.</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="principle-card">
+          <mat-card-content>
+            <div class="principle-icon">
+              <mat-icon>self_improvement</mat-icon>
+            </div>
+            <h3>الواجب نحو الذات</h3>
+            <p>المسؤولية عن التطور الشخصي من خلال الإدراك الكامل لإمكانيات الفرد.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Objectives Section -->
+  <section class="objectives-section">
+    <div class="container">
+      <h2 class="section-title">أهدافنا</h2>
+      <p class="section-subtitle">نسعى لتحقيق هذه الأهداف في تكوين كل كشاف</p>
+      <div class="objectives-grid">
+        <div class="objective-item">
+          <div class="objective-number">1</div>
+          <div class="objective-content">
+            <h3>اكتشاف الكفاءات</h3>
+            <p>مساعدة الكشاف على اكتشاف كفاءاته ومواهبه الخاصة.</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="objective-number">2</div>
+          <div class="objective-content">
+            <h3>تحمل المسؤولية</h3>
+            <p>تعويد الكشاف على تحمل المسؤولية وأخذها على عاتقه.</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="objective-number">3</div>
+          <div class="objective-content">
+            <h3>تقوية الإرادة</h3>
+            <p>تمكين الكشاف من تعزيز إرادته وتثبيتها.</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="objective-number">4</div>
+          <div class="objective-content">
+            <h3>التكوين الذاتي</h3>
+            <p>تعزيز إمكانيات التكوين الذاتي لدى الكشاف.</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="objective-number">5</div>
+          <div class="objective-content">
+            <h3>خدمة المجتمع</h3>
+            <p>تربية الكشاف على خدمة المجتمع والاندماج فيه.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scout Method Section -->
+  <section class="method-section">
+    <div class="container">
+      <h2 class="section-title">منهجنا الكشفي</h2>
+      <p class="section-subtitle">يتميز بتكوين شامل واختيار أنشطة تربوية مناسبة لكل فئة</p>
+      <div class="method-grid">
+        <div class="method-item">
+          <mat-icon class="method-icon">nature_people</mat-icon>
+          <h3>الحياة في الطبيعة</h3>
+        </div>
+        <div class="method-item">
+          <mat-icon class="method-icon">groups</mat-icon>
+          <h3>نظام الطلائع</h3>
+        </div>
+        <div class="method-item">
+          <mat-icon class="method-icon">engineering</mat-icon>
+          <h3>التربية بالممارسة</h3>
+        </div>
+        <div class="method-item">
+          <mat-icon class="method-icon">military_tech</mat-icon>
+          <h3>نظام الشارات والأوسمة</h3>
+        </div>
+        <div class="method-item">
+          <mat-icon class="method-icon">handshake</mat-icon>
+          <h3>الالتزام بالوعد والقانون</h3>
+        </div>
+        <div class="method-item">
+          <mat-icon class="method-icon">trending_up</mat-icon>
+          <h3>التقدم والأنشطة المتنوعة</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Leaders Section -->
+  <section class="featured-section" #featured>
+    <h2 class="section-title">قادتنا المميزون</h2>
+    <p class="section-subtitle">تعرف على بعض القادة والأطر النشطين في المنظمة</p>
+    <div class="chefs-grid">
+      <mat-card *ngFor="let leader of featuredLeaders" class="leader-card">
+        <mat-card-header>
+          <div mat-card-avatar class="leader-avatar">{{ getInitials(leader.name) }}</div>
+          <mat-card-title>{{ leader.name }}</mat-card-title>
+          <mat-card-subtitle>{{ leader.role }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="leader-body">
+            <div class="leader-info">
+              <span class="badge">
+                <mat-icon>history</mat-icon>
+                {{ leader.yearsExp }} سنوات خبرة
+              </span>
+              <span class="badge">
+                <mat-icon>place</mat-icon>
+                {{ leader.region }}
+              </span>
+            </div>
+            <div class="rating">
+              <mat-icon *ngFor="let star of [1,2,3,4,5]" [class.filled]="star <= leader.rating">star</mat-icon>
+              <span>{{ leader.rating }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary">
+            <mat-icon>visibility</mat-icon>
+            عرض الملف الشخصي
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <h2 class="section-title">أخبار وأنشطة المنظمة</h2>
+    <p class="section-subtitle">آخر الأخبار والفعاليات والمشاريع التربوية</p>
+    <div class="blog-grid">
+      <mat-card *ngFor="let post of blogPosts" class="blog-card">
+        <img [src]="post.imageUrl" [alt]="post.title" class="blog-image">
+        <mat-card-content>
+          <div class="blog-meta">
+            <span class="blog-tag">{{ post.tag }}</span>
+            <span class="blog-date">{{ post.date }} • {{ post.readTime }}</span>
+          </div>
+          <h3 class="blog-title">{{ post.title }}</h3>
+          <p class="blog-excerpt">{{ post.excerpt }}</p>
+          <div class="blog-footer">
+            <div class="blog-author">
+              <div class="blog-avatar">{{ getInitials(post.author) }}</div>
+              <span>{{ post.author }}</span>
+            </div>
+            <button mat-button color="primary" class="blog-button">
+              <mat-icon>arrow_back</mat-icon>
+              اقرأ المزيد
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="blog-cta">
+      <button mat-raised-button color="primary">
+        <mat-icon>article</mat-icon>
+        عرض جميع الأخبار
+      </button>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <h2 class="section-title">شهادات المنخرطين</h2>
+    <p class="section-subtitle">آراء وتجارب الكشافين والقادة في المنظمة</p>
+    <div class="testimonials-grid">
+      <mat-card *ngFor="let testimonial of testimonials" class="testimonial-card">
+        <mat-card-content>
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">{{ testimonial.avatar }}</div>
+            <div class="testimonial-info">
+              <h4>{{ testimonial.name }}</h4>
+              <p>{{ testimonial.role }}</p>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <mat-icon *ngFor="let star of [1,2,3,4,5]" [class.filled]="star <= testimonial.rating">star</mat-icon>
+          </div>
+          <p class="testimonial-message">"{{ testimonial.message }}"</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2 class="section-title">الأسئلة الشائعة</h2>
+    <p class="section-subtitle">إجابات على أكثر الأسئلة شيوعاً حول المنظمة</p>
+    <div class="faq-container">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let faq of faqs; let i = index">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>help_outline</mat-icon>
+              {{ faq.question }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{ faq.answer }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <mat-icon class="newsletter-icon">mail</mat-icon>
+      <h2>ابق على اطلاع بأخبار المنظمة</h2>
+      <p>اشترك في نشرتنا الإخبارية لتصلك آخر الأنشطة والفعاليات الكشفية</p>
+      <div class="newsletter-form">
+        <mat-form-field appearance="outline" class="newsletter-input">
+          <mat-label>البريد الإلكتروني</mat-label>
+          <input matInput type="email" [(ngModel)]="email">
+          <mat-icon matPrefix>email</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="subscribeNewsletter()" [disabled]="!email">
+          <mat-icon>send</mat-icon>
+          اشترك الآن
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>كن جزءا من منظمة الكشاف المغربي</h2>
+    <p>انضم إلى 18,000 كشاف و 4,500 قائد متطوع في خدمة الوطن والحركة الكشفية</p>
+    <div class="cta-actions">
+      <button mat-raised-button color="accent" routerLink="/join">
+        <mat-icon>how_to_reg</mat-icon>
+        انضم للمنظمة
+      </button>
+      <button mat-stroked-button class="white-stroked-btn" routerLink="/login">
+        <mat-icon>dashboard</mat-icon>
+        منصة SAHI الرقمية
+      </button>
+    </div>
+  </section>
+</main>
+

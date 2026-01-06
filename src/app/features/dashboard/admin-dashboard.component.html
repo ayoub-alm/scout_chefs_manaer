@@ -1,0 +1,265 @@
+<div class="dashboard-container" [class.sidebar-collapsed]="!sidebarOpen()">
+  <!-- Sidebar -->
+  <aside class="sidebar" dir="rtl">
+    <div class="sidebar-header">
+      <img src="assets/logo.png" alt="SAHI Logo" class="sidebar-logo">
+      <h2 class="sidebar-title">SAHI - منصة إدارة أعضاء الكشافة</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+            <mat-icon>dashboard</mat-icon>
+            <span>لوحة التحكم</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard" class="nav-item">
+            <mat-icon>group</mat-icon>
+            <span>الأعضاء</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard" class="nav-item">
+            <mat-icon>assignment</mat-icon>
+            <span>المهام</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/dashboard" class="nav-item">
+            <mat-icon>assessment</mat-icon>
+            <span>التقارير</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" class="nav-item">
+            <mat-icon>home</mat-icon>
+            <span>الرئيسية</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" dir="rtl">
+    <div class="content-wrapper">
+      <!-- Header -->
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1 class="page-title">
+            <mat-icon class="title-icon">bar_chart</mat-icon>
+            لوحة التحكم للأعضاء
+          </h1>
+          <p class="page-subtitle" *ngIf="error()">{{ error() }}</p>
+        </div>
+        <div class="page-actions">
+          <button mat-icon-button class="sidebar-toggle" (click)="toggleSidebar()"
+            [attr.aria-label]="sidebarOpen() ? 'إخفاء القائمة' : 'إظهار القائمة'">
+            <mat-icon>{{ sidebarOpen() ? 'menu_open' : 'menu' }}</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Summary Cards -->
+      <div class="summary-cards">
+        <mat-card class="summary-card card-green">
+          <mat-card-content>
+            <div class="card-header">
+              <mat-icon class="card-icon">restaurant</mat-icon>
+              <span class="card-label">إجمالي الأعضاء</span>
+            </div>
+            <div class="card-value">{{ totalRecords() }}</div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="summary-card card-orange">
+          <mat-card-content>
+            <div class="card-header">
+              <mat-icon class="card-icon">check_circle</mat-icon>
+              <span class="card-label">الأعضاء المتاحون</span>
+            </div>
+            <div class="card-value">{{ availableCount() }}</div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="summary-card card-amber">
+          <mat-card-content>
+            <div class="card-header">
+              <mat-icon class="card-icon">star</mat-icon>
+              <span class="card-label">متوسط التقييم</span>
+            </div>
+            <div class="card-value">{{ averageRating() | number:'1.1-1' }}</div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="summary-card card-light-green">
+          <mat-card-content>
+            <div class="card-header">
+              <mat-icon class="card-icon">schedule</mat-icon>
+              <span class="card-label">قيد التفاوض</span>
+            </div>
+            <div class="card-value">{{ negotiatingCount() }}</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-section">
+        <mat-card class="chart-card" *ngIf="isBrowser">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>bar_chart</mat-icon>
+              الأعضاء حسب الحالة
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <canvas baseChart [data]="statusChartData" [type]="statusChartType" [options]="chartOptions">
+            </canvas>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="chart-card" *ngIf="isBrowser">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>pie_chart</mat-icon>
+              الأعضاء حسب التخصص
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <canvas baseChart [data]="cuisineChartData" [type]="cuisineChartType" [options]="chartOptions">
+            </canvas>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="chart-card" *ngIf="isBrowser">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>star_rate</mat-icon>
+              الأعضاء حسب التقييم
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <canvas baseChart [data]="ratingChartData" [type]="ratingChartType" [options]="chartOptions">
+            </canvas>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Members Table -->
+      <div class="table-section">
+        <mat-card class="table-card">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>group</mat-icon>
+              جميع الأعضاء
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p-table [value]="chefs()" [rows]="rows()" [totalRecords]="totalRecords()" [paginator]="true"
+              [globalFilterFields]="['firstName', 'lastName', 'email', 'primaryCuisine']" responsiveLayout="scroll"
+              [loading]="loading()" (onPage)="onPageChange($event)" selectionMode="single" dataKey="id"
+              [(selection)]="selectedChef" (onRowSelect)="onRowSelect($event)">
+
+              <ng-template pTemplate="header">
+                <tr>
+                  <th pSortableColumn="firstName">الاسم</th>
+                  <th pSortableColumn="email">البريد الإلكتروني</th>
+                  <th pSortableColumn="primaryCuisine">المجال</th>
+                  <th pSortableColumn="availabilityStatus">الحالة</th>
+                  <th pSortableColumn="rating">التقييم</th>
+                  <th>إجراءات</th>
+                </tr>
+              </ng-template>
+
+              <ng-template pTemplate="body" let-chef>
+                <tr [pSelectableRow]="chef">
+                  <td>{{ chef.firstName }} {{ chef.lastName }}</td>
+                  <td>{{ chef.email }}</td>
+                  <td>{{ chef.primaryCuisine }}</td>
+                  <td>
+                    <p-badge [value]="chef.statusDisplay" [severity]="getBadgeSeverity(chef.statusDisplay)">
+                    </p-badge>
+                  </td>
+                  <td>
+                    <span *ngIf="chef.rating">{{ chef.rating }}/5</span>
+                    <span *ngIf="!chef.rating">-</span>
+                  </td>
+                  <td>
+                    <button pButton type="button" icon="pi pi-eye"
+                      class="p-button-rounded p-button-info p-button-text mr-2" (click)="viewDetails(chef)">
+                    </button>
+                    <button pButton type="button" icon="pi pi-trash"
+                      class="p-button-rounded p-button-danger p-button-text" (click)="deleteChef(chef.id)">
+                    </button>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Member Details -->
+      <div class="details-section" *ngIf="selectedChef">
+        <mat-card class="details-card">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon>info</mat-icon>
+              تفاصيل العضو
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="details-grid">
+              <div>
+                <h3>{{ selectedChef?.firstName }} {{ selectedChef?.lastName }}</h3>
+                <p class="details-email">{{ selectedChef?.email }}</p>
+              </div>
+              <div class="detail-row">
+                <span>الهاتف:</span>
+                <strong>{{ selectedChef?.phone || 'غير متوفر' }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>المجال:</span>
+                <strong>{{ selectedChef?.primaryCuisine || 'غير محدد' }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>المهارات الثانوية:</span>
+                <strong>{{ selectedChef?.secondaryCuisines || 'غير محددة' }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>الدور الحالي:</span>
+                <strong>{{ selectedChef?.currentPosition || 'غير محدد' }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>المدينة:</span>
+                <strong>{{ selectedChef?.city || 'غير محددة' }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>البلد:</span>
+                <strong>{{ selectedChef?.country || 'غير محدد' }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>سنوات الخبرة:</span>
+                <strong>{{ selectedChef?.yearsOfExperience || 0 }}</strong>
+              </div>
+              <div class="detail-row">
+                <span>الحالة:</span>
+                <p-badge [value]="selectedChef?.statusDisplay" [severity]="getBadgeSeverity(selectedChef?.statusDisplay || '')"></p-badge>
+              </div>
+              <div class="detail-row">
+                <span>التقييم:</span>
+                <strong *ngIf="selectedChef?.rating">{{ selectedChef?.rating }}/5</strong>
+                <span *ngIf="!selectedChef?.rating">-</span>
+              </div>
+              <div class="detail-row">
+                <span>ملاحظات:</span>
+                <span>{{ selectedChef?.notes || 'لا توجد ملاحظات' }}</span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </main>
+</div>

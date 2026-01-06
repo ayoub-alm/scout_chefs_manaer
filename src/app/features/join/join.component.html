@@ -1,0 +1,195 @@
+<div class="join-container">
+    <div class="registration-container">
+        <div class="header-section">
+            <mat-icon class="header-icon">how_to_reg</mat-icon>
+            <h2 class="section-title">انضم كقائد كشفي</h2>
+            <p class="section-subtitle">انضم إلى شبكتنا المتنامية من القادة الكشفيين المحترفين وتواصل مع الفرص في جميع
+                أنحاء المغرب</p>
+        </div>
+
+        <form [formGroup]="leaderForm" (ngSubmit)="onSubmitLeader()" class="leader-form">
+            <!-- Alert Messages -->
+            <div *ngIf="successMessage()" class="alert alert-success">
+                <mat-icon>check_circle</mat-icon>
+                {{ successMessage() }}
+            </div>
+            <div *ngIf="errorMessage()" class="alert alert-error">
+                <mat-icon>error</mat-icon>
+                {{ errorMessage() }}
+            </div>
+
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h3>
+                    <mat-icon>person</mat-icon>
+                    المعلومات الشخصية
+                </h3>
+                <div class="form-grid">
+                    <mat-form-field appearance="outline">
+                        <mat-label>الاسم الأول</mat-label>
+                        <input matInput formControlName="firstName">
+                        <mat-icon matPrefix>person</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('firstName')">الاسم الأول مطلوب</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>الاسم العائلي</mat-label>
+                        <input matInput formControlName="lastName">
+                        <mat-icon matPrefix>person</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('lastName')">الاسم العائلي مطلوب</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-grid">
+                    <mat-form-field appearance="outline">
+                        <mat-label>البريد الإلكتروني</mat-label>
+                        <input matInput type="email" formControlName="email">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('email')">بريد إلكتروني صالح مطلوب</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>كلمة المرور</mat-label>
+                        <input matInput type="password" formControlName="password">
+                        <mat-icon matPrefix>lock</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('password')">كلمة مرور من 6 أحرف على الأقل</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>رقم الهاتف</mat-label>
+                        <input matInput formControlName="phone">
+                        <mat-icon matPrefix>phone</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('phone')">رقم الهاتف مطلوب</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- Location Information -->
+            <div class="form-section">
+                <h3>
+                    <mat-icon>place</mat-icon>
+                    الموقع
+                </h3>
+                <div class="form-grid">
+                    <mat-form-field appearance="outline">
+                        <mat-label>المدينة</mat-label>
+                        <mat-select formControlName="city">
+                            <mat-option *ngFor="let city of moroccanCities" [value]="city">
+                                {{ city }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon matPrefix>location_city</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('city')">المدينة مطلوبة</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>الجهة</mat-label>
+                        <mat-select formControlName="region">
+                            <mat-option *ngFor="let region of moroccanRegions" [value]="region.value">
+                                {{ region.label }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon matPrefix>map</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('region')">الجهة مطلوبة</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>المنظمة/الفوج الحالي</mat-label>
+                        <input matInput formControlName="currentOrganization">
+                        <mat-icon matPrefix>business</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- Professional Information -->
+            <div class="form-section">
+                <h3>
+                    <mat-icon>work</mat-icon>
+                    المعلومات المهنية
+                </h3>
+                <div class="form-grid">
+                    <mat-form-field appearance="outline">
+                        <mat-label>سنوات الخبرة</mat-label>
+                        <input matInput type="number" formControlName="yearsOfExperience">
+                        <mat-icon matPrefix>history</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('yearsOfExperience')">سنوات الخبرة مطلوبة</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>الدور الأساسي</mat-label>
+                        <mat-select formControlName="primaryRole">
+                            <mat-option *ngFor="let role of scoutRoles" [value]="role.value">
+                                {{ role.label }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon matPrefix>stars</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('primaryRole')">الدور الأساسي مطلوب</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group full-width">
+                    <mat-form-field appearance="outline" class="full-width-field">
+                        <mat-label>الأدوار الثانوية (مفصولة بفواصل)</mat-label>
+                        <input matInput formControlName="secondaryRoles">
+                        <mat-icon matPrefix>group_work</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-grid">
+                    <mat-form-field appearance="outline">
+                        <mat-label>الفرقة/المجموعة الكشفية</mat-label>
+                        <input matInput formControlName="scoutGroup">
+                        <mat-icon matPrefix>groups</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>حالة التوفر</mat-label>
+                        <mat-select formControlName="availabilityStatus">
+                            <mat-option *ngFor="let option of availabilityOptions" [value]="option.value">
+                                {{ option.label }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-icon matPrefix>event_available</mat-icon>
+                        <mat-error *ngIf="isFieldInvalid('availabilityStatus')">حالة التوفر مطلوبة</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group full-width">
+                    <mat-form-field appearance="outline" class="full-width-field">
+                        <mat-label>الشهادات والتكوينات</mat-label>
+                        <input matInput formControlName="certifications">
+                        <mat-icon matPrefix>card_membership</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-section">
+                <h3>
+                    <mat-icon>description</mat-icon>
+                    معلومات إضافية
+                </h3>
+                <div class="form-group full-width">
+                    <mat-form-field appearance="outline" class="full-width-field">
+                        <mat-label>نبذة عنك / ملاحظات إضافية</mat-label>
+                        <textarea matInput formControlName="notes" rows="4"></textarea>
+                        <mat-icon matPrefix>edit_note</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button mat-raised-button color="primary" type="submit"
+                    [disabled]="leaderForm.invalid || isSubmitting()">
+                    <mat-icon>send</mat-icon>
+                    {{ isSubmitting() ? 'جاري الإرسال...' : 'إرسال الملف الشخصي' }}
+                </button>
+                <button mat-stroked-button type="button" (click)="leaderForm.reset()">
+                    <mat-icon>refresh</mat-icon>
+                    إعادة تعيين
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
