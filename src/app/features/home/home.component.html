@@ -4,7 +4,9 @@
     <div class="hero-inner">
       <div class="hero-text p-5">
         <h1 class="title text-center">منظمة الكشاف المغربي</h1>
-        <p class="subtitle">حركة شبابية تربوية توفر للفتيات والفتيان مشروعا تربويا للمساهمة في تكوينهم على المستوى الجسدي، الفكري، الاجتماعي والروحي، ليكونوا مواطنين صالحين قادرين على لعب دور مفيد في تنمية المجتمع الوطني والدولي وفقا لمبادئ الحركة الكشفية العالمية.</p>
+        <p class="subtitle">حركة شبابية تربوية توفر للفتيات والفتيان مشروعا تربويا للمساهمة في تكوينهم على المستوى
+          الجسدي، الفكري، الاجتماعي والروحي، ليكونوا مواطنين صالحين قادرين على لعب دور مفيد في تنمية المجتمع الوطني
+          والدولي وفقا لمبادئ الحركة الكشفية العالمية.</p>
 
         <div class="hero-actions">
           <button mat-raised-button color="primary" routerLink="/join">
@@ -39,26 +41,59 @@
 
   <!-- About Organization Section -->
   <section class="about-osm-section">
-    <div class="container">
-      <h2 class="section-title">نبذة عن المنظمة</h2>
+    <div class="container about-container">
       <div class="about-content">
+        <h2 class="section-title text-right">نبذة عن المنظمة</h2>
         <div class="about-text">
           <p class="about-description">
-            تأسست <strong>منظمة الكشاف المغربي</strong> سنة <strong>1969</strong> على إثر انشقاق جمعية الكشفية الحسنية، على يد أطر أشرفت على حركة الكشافة المغربية منذ سنة 1933. حصلت المنظمة على الاعتراف الرسمي من السلطات المغربية سنة <strong>1970</strong>، والتزمت منذ ذلك الحين بالعمل على نشر ممارسة الكشفية الحقيقية للجميع في كافة أرجاء المملكة المغربية.
+            تأسست <strong>منظمة الكشاف المغربي</strong> سنة <strong>1969</strong> على إثر انشقاق جمعية الكشفية الحسنية،
+            على يد أطر أشرفت على حركة الكشافة المغربية منذ سنة 1933. حصلت المنظمة على الاعتراف الرسمي من السلطات
+            المغربية سنة <strong>1970</strong>، والتزمت منذ ذلك الحين بالعمل على نشر ممارسة الكشفية الحقيقية للجميع في
+            كافة أرجاء المملكة المغربية.
           </p>
           <p class="about-description">
-            لأجيال عديدة من المواطنين، كان للحركة الكشفية تأثير حاسم في حياتهم. من بين الشخصيات والقادة الذين مروا بالحركة نجد: <strong>سي علال الفاسي، علال بن عبد الله، الشفشاوني، زرقطوني، محمد بوسطة، عباس الفاسي</strong> وغيرهم.
+            لأجيال عديدة من المواطنين، كان للحركة الكشفية تأثير حاسم في حياتهم. من بين الشخصيات والقادة الذين مروا
+            بالحركة نجد: <strong>سي علال الفاسي، علال بن عبد الله، الشفشاوني، زرقطوني، محمد بوسطة، عباس الفاسي</strong>
+            وغيرهم.
           </p>
-          <p class="about-description">
-            منظمة الكشاف المغربي، الوفية لجذورها في الحركة الوطنية، تتحمل بفخر مسؤوليتها في رعاية الأجيال الجديدة. وتضم اليوم <strong>18,000 منخرط</strong> و<strong>4,500 راشد متطوع</strong>. وتتكون من <strong>128 مقاطعة</strong> موزعة على <strong>16 جهة</strong> بالمملكة.
-          </p>
-          <p class="about-description">
-            المنظمة عضو في <strong>الاتحاد الوطني للكشفية المغربية</strong>، المنتسب إلى <strong>المنظمة الكشفية العربية</strong> وكذا <strong>المنظمة العالمية للحركة الكشفية</strong>.
-          </p>
+          <div class="stat-highlight">
+            <div class="stat-box">
+              <span class="stat-number">18,000+</span>
+              <span class="stat-label">منخرط</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">4,500+</span>
+              <span class="stat-label">قائد متطوع</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="about-image shine-effect">
+        <img src="/assets/images/community.png" alt="Scouts Community" class="rounded-lg shadow-xl">
       </div>
     </div>
   </section>
+
+  <!-- Dashboard Preview Section -->
+  <section class="dashboard-preview-section">
+    <div class="container preview-container">
+      <div class="preview-text">
+        <h2 class="section-title">المنصة الرقمية SAHI</h2>
+        <p class="section-subtitle">إدارة عصرية، تتبع دقيق، وتسهيل لعمل القادة</p>
+        <p class="preview-desc">
+          منصة متكاملة تمكنك من إدارة الأعضاء، تنظيم الأنشطة، ومتابعة التقارير بكل سهولة وفعالية.
+        </p>
+        <button mat-raised-button color="primary" routerLink="/login" class="preview-btn">
+          <mat-icon>login</mat-icon>
+          تسجيل الدخول للمنصة
+        </button>
+      </div>
+      <div class="preview-image floating-anim">
+        <img src="/assets/images/dashboard-preview.png" alt="SAHI Dashboard Interface">
+      </div>
+    </div>
+  </section>
+
 
   <!-- Our Goal Section -->
   <section class="features-section" #features>
@@ -66,7 +101,8 @@
     <p class="section-subtitle">تشجيع تربية وازدهار الفتيات والفتيان وفق مبادئ التكوين الشامل</p>
     <div class="about-goal">
       <p class="goal-text">
-        تشجيع تربية وازدهار الفتيات والفتيان وفق مبادئ التكوين الجسدي، الفكري، الأخلاقي، الاجتماعي والروحي، حسب ما أراده مؤسس الحركة الكشفية وبما يتناسب مع الواقع المغربي.
+        تشجيع تربية وازدهار الفتيات والفتيان وفق مبادئ التكوين الجسدي، الفكري، الأخلاقي، الاجتماعي والروحي، حسب ما أراده
+        مؤسس الحركة الكشفية وبما يتناسب مع الواقع المغربي.
       </p>
     </div>
   </section>
@@ -148,7 +184,8 @@
               <mat-icon>diversity_3</mat-icon>
             </div>
             <h3>الواجب نحو الآخرين</h3>
-            <p>الولاء للوطن، في أفق تعزيز السلام والتفاهم والتعاون على المستوى المحلي والوطني والدولي، والمساهمة في تنمية المجتمع، في احترام كرامة الإنسان وسلامة الطبيعة.</p>
+            <p>الولاء للوطن، في أفق تعزيز السلام والتفاهم والتعاون على المستوى المحلي والوطني والدولي، والمساهمة في
+              تنمية المجتمع، في احترام كرامة الإنسان وسلامة الطبيعة.</p>
           </mat-card-content>
         </mat-card>
         <mat-card class="principle-card">
@@ -395,4 +432,3 @@
     </div>
   </section>
 </main>
-

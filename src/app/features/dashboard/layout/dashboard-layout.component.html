@@ -1,0 +1,63 @@
+<div class="dashboard-layout" [class.sidebar-collapsed]="!sidebarOpen()" dir="rtl">
+    <!-- Sidebar (Right) -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <!-- Placeholder Logo -->
+            <div class="logo-placeholder">
+                <mat-icon>shield</mat-icon>
+            </div>
+            <h2 class="sidebar-title">تسيير الكشافة</h2>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li>
+                    <a routerLink="/dashboard/overview" routerLinkActive="active" class="nav-item">
+                        <mat-icon>dashboard</mat-icon>
+                        <span>لوحة التحكم</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/dashboard/members" routerLinkActive="active" class="nav-item">
+                        <mat-icon>group</mat-icon>
+                        <span>الأعضاء</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/dashboard/tasks" routerLinkActive="active" class="nav-item">
+                        <mat-icon>assignment</mat-icon>
+                        <span>المهام</span>
+                    </a>
+                </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a routerLink="/" class="nav-item">
+                        <mat-icon>home</mat-icon>
+                        <span>الرئيسية</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-header">
+            <button mat-icon-button (click)="toggleSidebar()" class="menu-btn">
+                <mat-icon>{{ sidebarOpen() ? 'menu_open' : 'menu' }}</mat-icon>
+            </button>
+            <div class="header-actions">
+                <button mat-icon-button>
+                    <mat-icon>notifications</mat-icon>
+                </button>
+                <div class="user-profile">
+                    <span class="avatar">م</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-scroll">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

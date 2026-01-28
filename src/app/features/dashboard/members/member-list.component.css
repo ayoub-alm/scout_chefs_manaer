@@ -1,0 +1,134 @@
+.members-container {
+    padding: 0;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+}
+
+.page-subtitle {
+    color: #64748b;
+    margin: 0;
+}
+
+.table-card {
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.table-toolbar {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: white;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-input input {
+    width: 100%;
+    padding-left: 2.5rem;
+    /* Space for icon LTR */
+    padding-right: 0.75rem;
+    border-radius: 8px;
+}
+
+/* RTL specific for PrimeNG input icon */
+:host-context([dir="rtl"]) .p-input-icon-left>i {
+    left: auto;
+    right: 0.75rem;
+}
+
+:host-context([dir="rtl"]) .p-input-icon-left>input {
+    padding-left: 0.75rem;
+    padding-right: 2.5rem;
+}
+
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e0f2fe;
+    color: #0369a1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.user-email {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.tag {
+    background: #f1f5f9;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 600;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+::ng-deep .p-datatable-header {
+    background: white;
+}
+
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.add-btn {
+    background-color: var(--primary-color, #3ba4d8) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1.5rem !important;
+}
