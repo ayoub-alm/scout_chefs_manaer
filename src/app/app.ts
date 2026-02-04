@@ -34,6 +34,10 @@ import { CommonModule } from '@angular/common';
               <mat-icon>group_add</mat-icon>
               <span>انضم إلينا</span>
             </a>
+            <a routerLink="/blog" routerLinkActive="active" class="nav-link">
+              <mat-icon>article</mat-icon>
+              <span>الأخبار</span>
+            </a>
             <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">
               <mat-icon>dashboard</mat-icon>
               <span>لوحة التحكم</span>
@@ -57,6 +61,10 @@ import { CommonModule } from '@angular/common';
               <a routerLink="/join" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
                 <mat-icon>group_add</mat-icon>
                 <span>انضم إلينا</span>
+              </a>
+              <a routerLink="/blog" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
+                <mat-icon>article</mat-icon>
+                <span>الأخبار</span>
               </a>
               <a routerLink="/dashboard" routerLinkActive="active" class="nav-link" (click)="closeMenu()">
                 <mat-icon>dashboard</mat-icon>
@@ -92,14 +100,15 @@ import { CommonModule } from '@angular/common';
     }
     
     .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
     }
     
     .nav-content {
@@ -122,35 +131,49 @@ import { CommonModule } from '@angular/common';
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1001;
     }
     
     .brand:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px) scale(1.02);
     }
 
     .brand-text img {
       max-height: 60px;
       width: auto;
+      filter: drop-shadow(0 2px 8px rgba(124, 58, 237, 0.2));
+      transition: filter 0.3s ease;
+    }
+
+    .brand:hover .brand-text img {
+      filter: drop-shadow(0 4px 12px rgba(124, 58, 237, 0.3));
     }
 
     /* Desktop Navigation */
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 0.5rem;
       align-items: center;
     }
 
     /* Mobile Menu Button */
     .mobile-menu-btn {
       display: none;
-      background: none;
+      background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
       border: none;
-      color: var(--gray-700, #333);
-      padding: 0.5rem;
+      color: white;
+      padding: 0.625rem;
       cursor: pointer;
       z-index: 1001;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
     }
 
     .mobile-menu-btn mat-icon {
@@ -165,15 +188,18 @@ import { CommonModule } from '@angular/common';
       position: fixed;
       top: 0;
       right: -100%;
-      width: 280px;
+      width: 300px;
       height: 100vh;
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       z-index: 1000;
-      padding-top: 80px;
+      padding-top: 90px;
       padding-bottom: 2rem;
-      transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -8px 0 32px rgba(124, 58, 237, 0.15);
       overflow-y: auto;
+      border-left: 1px solid rgba(124, 58, 237, 0.1);
     }
 
     .mobile-nav.open {
@@ -184,7 +210,9 @@ import { CommonModule } from '@angular/common';
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(124, 58, 237, 0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       z-index: 999;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -199,73 +227,111 @@ import { CommonModule } from '@angular/common';
     .mobile-nav-content {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.5rem;
       padding: 0 1.5rem;
     }
     
     .nav-link {
       text-decoration: none;
-      color: var(--gray-600, #475569);
+      color: #4b5563;
       font-size: 1rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1rem;
-      border-radius: 12px;
+      gap: 0.625rem;
+      padding: 0.875rem 1.25rem;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(167, 139, 250, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .nav-link mat-icon {
-      font-size: 20px;
-      width: 20px;
-      height: 20px;
-      opacity: 0.7;
-      transition: all 0.3s ease;
+      font-size: 22px;
+      width: 22px;
+      height: 22px;
+      opacity: 0.8;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .nav-link:hover, .nav-link.active {
-      color: var(--primary-color, #662483);
-      background: rgba(102, 36, 131, 0.08);
+      color: #7c3aed;
+      background: rgba(124, 58, 237, 0.08);
+      transform: translateX(-3px);
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+      opacity: 1;
     }
 
     .nav-link:hover mat-icon, .nav-link.active mat-icon {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.15) rotate(-5deg);
     }
     
     .nav-btn-primary {
       text-decoration: none;
-      background: linear-gradient(135deg, var(--primary-color, #662483) 0%, var(--primary-dark, #4a1a5f) 100%);
+      background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.875rem 1.75rem;
       border-radius: 50px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.625rem;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 12px rgba(102, 36, 131, 0.32);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-btn-primary:hover::before {
+      opacity: 1;
     }
     
     .nav-btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(102, 36, 131, 0.38);
-      background: linear-gradient(135deg, var(--primary-light, #8e4ba8) 0%, var(--primary-color, #662483) 100%);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.45);
     }
 
     .nav-btn-primary mat-icon {
-      font-size: 20px;
-      width: 20px;
-      height: 20px;
+      font-size: 22px;
+      width: 22px;
+      height: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-btn-primary span {
+      position: relative;
+      z-index: 1;
     }
     
     .main-content {
       flex: 1;
     }
     
+    /* Responsive Design */
     @media (max-width: 900px) {
       .desktop-nav {
         display: none;
@@ -280,12 +346,37 @@ import { CommonModule } from '@angular/common';
       }
 
       .nav-content {
-        padding: 0.5rem 1rem;
+        padding: 0.625rem 1rem;
       }
 
       .brand-text img {
-        height: 48px;
-        width: 48px;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-content {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .brand-text img {
+        height: 45px;
+        width: 45px;
+      }
+
+      .mobile-nav {
+        width: 280px;
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      .nav-btn-primary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
       }
     }
   `],

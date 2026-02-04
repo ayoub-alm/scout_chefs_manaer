@@ -50,6 +50,72 @@
         </mat-card>
     </div>
 
+    <!-- Events and Blog Section -->
+    <div class="sections-grid">
+        <!-- Events Section -->
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <mat-card-title class="card-title-flex">
+                    <mat-icon>event</mat-icon>
+                    الأحداث القادمة
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="events-list">
+                    <div class="event-item" *ngFor="let event of events">
+                        <div class="event-icon" [ngClass]="event.type.toLowerCase()">
+                            <mat-icon>{{ event.icon }}</mat-icon>
+                        </div>
+                        <div class="event-details">
+                            <span class="event-title">{{ event.title }}</span>
+                            <span class="event-date">{{ event.date }}</span>
+                        </div>
+                        <span class="event-status"
+                            [ngClass]="event.status === 'قادم' ? 'status-upcoming' : 'status-pending'">
+                            {{ event.status }}
+                        </span>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <!-- Blog Management Section -->
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <mat-card-title class="card-title-flex">
+                    <mat-icon>article</mat-icon>
+                    إدارة المدونة
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="blog-stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">{{ blogStats.totalPosts }}</span>
+                        <span class="stat-label">مقال منشور</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">{{ blogStats.monthlyViews }}</span>
+                        <span class="stat-label">مشاهدة شهرية</span>
+                    </div>
+                    <div class="stat-item highlight">
+                        <span class="stat-value">{{ blogStats.pendingReviews }}</span>
+                        <span class="stat-label">في الانتظار</span>
+                    </div>
+                </div>
+                <div class="blog-actions">
+                    <button mat-raised-button color="primary" class="full-width-btn">
+                        <mat-icon>add</mat-icon>
+                        إضافة مقال جديد
+                    </button>
+                    <button mat-stroked-button class="full-width-btn">
+                        <mat-icon>list</mat-icon>
+                        عرض المقالات
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
     <!-- Charts Section -->
     <div class="charts-section">
         <mat-card class="chart-card" *ngIf="isBrowser">

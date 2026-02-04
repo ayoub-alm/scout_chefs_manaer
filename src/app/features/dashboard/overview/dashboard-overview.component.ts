@@ -46,4 +46,16 @@ export class DashboardOverviewComponent {
             backgroundColor: ['#4caf50', '#ffc107', '#f44336']
         }]
     };
+
+    events = [
+        { title: 'المخيم الربيعي', date: '2026-03-15', type: 'Camping', status: 'قادم', icon: 'cabin' },
+        { title: 'دورة القيادة', date: '2026-03-20', type: 'Formation', status: 'مؤكد', icon: 'school' },
+        { title: 'اجتماع القادة', date: '2026-04-01', type: 'Meeting', status: 'قيد الانتظار', icon: 'groups' }
+    ];
+
+    blogStats = {
+        totalPosts: 24,
+        pendingReviews: 3,
+        monthlyViews: 1250
+    };
 }

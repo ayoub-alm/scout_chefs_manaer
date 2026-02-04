@@ -1,0 +1,39 @@
+<main class="blog-page" dir="rtl">
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <div class="hero-content">
+      <mat-icon class="hero-icon">article</mat-icon>
+      <h1 class="hero-title">أخبار وأنشطة المنظمة</h1>
+      <p class="hero-subtitle">آخر الأخبار والفعاليات والمشاريع التربوية لمنظمة الكشاف المغربي</p>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <section class="blog-content">
+    <div class="container">
+      <div class="blog-grid">
+        <mat-card *ngFor="let post of blogPosts" class="blog-card">
+          <img [src]="post.imageUrl" [alt]="post.title" class="blog-image">
+          <mat-card-content>
+            <div class="blog-meta">
+              <span class="blog-tag">{{ post.tag }}</span>
+              <span class="blog-date">{{ post.date }} • {{ post.readTime }}</span>
+            </div>
+            <h3 class="blog-title">{{ post.title }}</h3>
+            <p class="blog-excerpt">{{ post.excerpt }}</p>
+            <div class="blog-footer">
+              <div class="blog-author">
+                <div class="blog-avatar">{{ getInitials(post.author) }}</div>
+                <span>{{ post.author }}</span>
+              </div>
+              <button mat-button color="primary" class="blog-button">
+                <mat-icon>arrow_back</mat-icon>
+                اقرأ المزيد
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+</main>

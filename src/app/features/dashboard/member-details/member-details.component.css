@@ -15,7 +15,10 @@
     margin-bottom: 2rem;
     border-radius: 16px;
     border: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: #ffffff !important;
+    /* Ensure white background */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1) !important;
+    /* Enhanced shadow */
 }
 
 .profile-header {
@@ -84,7 +87,11 @@
 
 .info-card {
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: #ffffff !important;
+    /* Ensure white background */
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08) !important;
+    /* Enhanced shadow, remove grey look */
+    border: none;
 }
 
 .full-width {

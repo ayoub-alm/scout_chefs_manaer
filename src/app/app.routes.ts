@@ -13,6 +13,10 @@ export const routes: Routes = [
     component: JoinComponent
   },
   {
+    path: 'blog',
+    loadComponent: () => import('./features/blog/blog.component').then(m => m.BlogComponent)
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
