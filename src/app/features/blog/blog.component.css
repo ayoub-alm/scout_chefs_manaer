@@ -12,13 +12,15 @@
   left: 0;
   right: 0;
   height: 600px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(0, 51, 153, 0.03) 0%, rgba(0, 153, 51, 0.03) 100%);
+  /* Blue to Green */
   z-index: 0;
 }
 
 /* Hero Section with Glassmorphism */
 .blog-hero {
-  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  background: linear-gradient(135deg, #003399 0%, #002266 100%);
+  /* Royal Blue gradient */
   color: white;
   padding: clamp(3rem, 8vw, 5rem) 2rem;
   text-align: center;
@@ -46,7 +48,8 @@
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.2) 0%, transparent 70%);
+  /* Gold accent */
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
@@ -118,17 +121,18 @@
 
 /* Neomorphism Card with Glassmorphism Overlay */
 .blog-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 24px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 8px 8px 20px rgba(124, 58, 237, 0.08),
-    -4px -4px 16px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 51, 153, 0.08),
+    0 1px 3px rgba(60, 64, 67, 0.1);
   position: relative;
   cursor: pointer;
-  border: 1px solid rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(0, 51, 153, 0.1);
+  /* Blue border */
 }
 
 .blog-card::before {
@@ -138,7 +142,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(167, 139, 250, 0.03));
+  background: linear-gradient(135deg, rgba(0, 51, 153, 0.02), rgba(0, 153, 51, 0.02));
+  /* Blue to Green */
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -186,11 +191,11 @@
 }
 
 .blog-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 12px 12px 32px rgba(124, 58, 237, 0.15),
-    -6px -6px 24px rgba(255, 255, 255, 0.95),
-    0 20px 40px rgba(124, 58, 237, 0.1);
-  border-color: rgba(124, 58, 237, 0.2);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 51, 153, 0.15),
+    0 4px 12px rgba(60, 64, 67, 0.1);
+  border-color: rgba(0, 51, 153, 0.2);
+  /* Blue border on hover */
 }
 
 .blog-card .blog-image {
@@ -206,7 +211,8 @@
   height: 240px;
   object-fit: cover;
   border-bottom: 3px solid transparent;
-  border-image: linear-gradient(90deg, #7c3aed, #a78bfa) 1;
+  border-image: linear-gradient(90deg, #003399, #FFCC00) 1;
+  /* Blue to Gold */
   position: relative;
 }
 
@@ -222,19 +228,20 @@
 }
 
 .blog-tag {
-  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  background: linear-gradient(135deg, #009933, #33cc66);
+  /* Green gradient */
   color: white;
   padding: 0.5rem 1.25rem;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 153, 51, 0.3);
   transition: all 0.3s ease;
 }
 
 .blog-tag:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 153, 51, 0.4);
 }
 
 .blog-date {
@@ -255,7 +262,8 @@
 }
 
 .blog-card:hover .blog-title {
-  color: #7c3aed;
+  color: #003399;
+  /* Royal Blue */
 }
 
 .blog-excerpt {
@@ -272,7 +280,8 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 1.25rem;
-  border-top: 2px solid rgba(124, 58, 237, 0.1);
+  border-top: 2px solid rgba(0, 51, 153, 0.1);
+  /* Blue border */
   position: relative;
   z-index: 2;
   flex-wrap: wrap;
@@ -292,20 +301,21 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  background: linear-gradient(135deg, #003399, #0044cc);
+  /* Blue gradient */
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.3);
   transition: all 0.3s ease;
 }
 
 .blog-card:hover .blog-avatar {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 51, 153, 0.4);
 }
 
 .blog-button {

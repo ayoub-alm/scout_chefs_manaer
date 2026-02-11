@@ -108,9 +108,9 @@ export class HomeComponent {
   ];
 
   worldStats = [
-    { value: '18,000', label: 'منخرط', icon: 'groups', color: '#662483' },
+    { value: '18,000', label: 'منخرط', icon: 'groups', color: '#003399' },
     { value: '4,500', label: 'راشد متطوع', icon: 'volunteer_activism', color: '#ff8c42' },
-    { value: '128', label: 'مقاطعة', icon: 'map', color: '#00bf63' },
+    { value: '128', label: 'مقاطعة', icon: 'map', color: '#009933' },
     { value: '16', label: 'جهة بالمملكة', icon: 'public', color: '#3ba4d8' }
   ];
 

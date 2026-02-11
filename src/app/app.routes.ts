@@ -42,6 +42,14 @@ export const routes: Routes = [
         loadComponent: () => import('./features/dashboard/member-details/member-details.component').then(m => m.MemberDetailsComponent)
       },
       {
+        path: 'events',
+        loadComponent: () => import('./features/dashboard/events/events-list.component').then(m => m.EventsListComponent)
+      },
+      {
+        path: 'trainings',
+        loadComponent: () => import('./features/dashboard/trainings/trainings-list.component').then(m => m.TrainingsListComponent)
+      },
+      {
         path: 'tasks',
         redirectTo: 'overview' // Placeholder
       }

@@ -1,0 +1,551 @@
+﻿/* Google Minimalist Styles for Home Page Sections */
+
+/* Features Section - Google Style */
+.features-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    position: relative;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    text-align: center;
+    height: 100%;
+    padding: 32px 24px;
+    transition: all 0.2s ease;
+    background: white;
+    border: 1px solid #e8eaed;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 8px rgba(60, 64, 67, 0.15);
+    border-color: rgba(211, 47, 47, 0.2);
+}
+
+.feature-icon {
+    margin: 0 auto 20px auto;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    color: #003399;
+    /* Royal Blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    background: #e6f0ff;
+    /* Light Blue */
+}
+
+.feature-icon mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.feature-item:hover .feature-icon {
+    background: #003399;
+    color: white;
+}
+
+.feature-item h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #202124;
+}
+
+.feature-item p {
+    color: #5f6368;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Mission Section - Google Style */
+.mission-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.mission-card:hover {
+    box-shadow: 0 2px 8px rgba(60, 64, 67, 0.15);
+    transform: translateY(-4px);
+}
+
+.mission-card mat-card-content {
+    padding: 24px !important;
+}
+
+.mission-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #e6f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: all 0.2s ease;
+}
+
+.mission-icon mat-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    color: #003399;
+}
+
+.mission-card:hover .mission-icon {
+    background: #003399;
+}
+
+.mission-card:hover .mission-icon mat-icon {
+    color: white;
+}
+
+.mission-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #202124;
+    text-align: center;
+}
+
+.mission-card p {
+    color: #5f6368;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Principles Section - Google Style */
+.principles-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.principle-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.principle-card:hover {
+    box-shadow: 0 2px 8px rgba(60, 64, 67, 0.15);
+    transform: translateY(-4px);
+}
+
+.principle-card mat-card-content {
+    padding: 24px !important;
+}
+
+.principle-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fffbe6;
+    /* Light Yellow for principles? Or keep Blue. Let's use Light Green #e6ffe6 for variety or stick to blue tokens. Let's use Light Green for Principles. */
+    background: #e6ffe6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: all 0.2s ease;
+}
+
+.principle-icon mat-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    color: #009933;
+    /* Scout Green */
+}
+
+.principle-card:hover .principle-icon {
+    background: #009933;
+}
+
+.principle-card:hover .principle-icon mat-icon {
+    color: white;
+}
+
+.principle-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #202124;
+    text-align: center;
+}
+
+.principle-card p {
+    color: #5f6368;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Commitments Section - Google Style */
+.commitments-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.commitments-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.commitment-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+    transition: all 0.2s ease;
+}
+
+.commitment-item:hover {
+    background: white;
+    box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+    transform: translateX(-4px);
+}
+
+.commitment-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.commitment-icon-wrapper mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #003399;
+}
+
+.commitment-item:hover .commitment-icon-wrapper {
+    background: #003399;
+}
+
+.commitment-item:hover .commitment-icon-wrapper mat-icon {
+    color: white;
+}
+
+.commitment-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    color: #202124;
+}
+
+.commitment-content p {
+    font-size: 14px;
+    color: #5f6368;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Objectives Section - Google Style */
+.objectives-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+    transition: all 0.2s ease;
+}
+
+.objective-item:hover {
+    box-shadow: 0 2px 8px rgba(60, 64, 67, 0.15);
+    transform: translateY(-4px);
+}
+
+.objective-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fffbe6;
+    /* Light Gold/Yellow */
+    color: #cc9900;
+    /* Darker Gold text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.objective-item:hover .objective-number {
+    background: #FFCC00;
+    /* Gold */
+    color: #202124;
+}
+
+.objective-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    color: #202124;
+}
+
+.objective-content p {
+    font-size: 14px;
+    color: #5f6368;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Method Section - Google Style */
+.method-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.method-item {
+    text-align: center;
+    padding: 24px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+    transition: all 0.2s ease;
+}
+
+.method-item:hover {
+    background: white;
+    box-shadow: 0 2px 8px rgba(60, 64, 67, 0.15);
+    transform: translateY(-4px);
+}
+
+.method-icon {
+    margin-bottom: 12px;
+    transition: transform 0.2s ease;
+}
+
+.method-icon mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #003399;
+    /* Royal Blue */
+}
+
+.method-item:hover .method-icon {
+    transform: scale(1.1);
+}
+
+.method-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #202124;
+    margin: 0;
+}
+
+/* Dashboard Preview Section - Google Style */
+.dashboard-preview-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.preview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.preview-text h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #202124;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+}
+
+.preview-text .section-subtitle {
+    font-size: 16px;
+    color: #5f6368;
+    margin-bottom: 16px;
+}
+
+.preview-desc {
+    font-size: 14px;
+    color: #5f6368;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.preview-btn {
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+    height: 40px;
+}
+
+.preview-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(60, 64, 67, 0.15);
+}
+
+/* About Goal Section - Google Style */
+.about-goal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+    box-shadow: 0 1px 3px rgba(60, 64, 67, 0.1);
+}
+
+.goal-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5f6368;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .preview-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .features-grid,
+    .mission-grid,
+    .principles-grid,
+    .objectives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .method-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .features-section,
+    .mission-section,
+    .principles-section,
+    .commitments-section,
+    .objectives-section,
+    .method-section,
+    .dashboard-preview-section {
+        padding: 60px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .features-section,
+    .mission-section,
+    .principles-section,
+    .commitments-section,
+    .objectives-section,
+    .method-section,
+    .dashboard-preview-section {
+        padding: 48px 12px;
+    }
+
+    .feature-item,
+    .mission-card mat-card-content,
+    .principle-card mat-card-content {
+        padding: 20px !important;
+    }
+}

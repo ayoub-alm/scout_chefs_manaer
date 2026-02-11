@@ -21,7 +21,7 @@ RUN npm run build -- --configuration production
 FROM nginx:1.25-alpine
 
 # Copy built application from builder stage
-COPY --from=builder /app/dist/scout-chefs-manager/browser /usr/share/nginx/html
+COPY --from=builder /app/dist/scout_chefs_manaer/browser /usr/share/nginx/html
 
 # Copy Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf

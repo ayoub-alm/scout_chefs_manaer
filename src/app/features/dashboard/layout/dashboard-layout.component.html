@@ -1,4 +1,7 @@
 <div class="dashboard-layout" [class.sidebar-collapsed]="!sidebarOpen()" dir="rtl">
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" [class.show]="sidebarOpen()" (click)="closeSidebar()"></div>
+
     <!-- Sidebar (Right) -->
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -8,9 +11,9 @@
             </div>
             <h2 class="sidebar-title">تسيير الكشافة</h2>
         </div>
-        
+
         <nav class="sidebar-nav">
-            <ul class="nav-list">
+            <ul class="nav-list" (click)="closeSidebar()">
                 <li>
                     <a routerLink="/dashboard/overview" routerLinkActive="active" class="nav-item">
                         <mat-icon>dashboard</mat-icon>
@@ -21,6 +24,18 @@
                     <a routerLink="/dashboard/members" routerLinkActive="active" class="nav-item">
                         <mat-icon>group</mat-icon>
                         <span>الأعضاء</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/dashboard/events" routerLinkActive="active" class="nav-item">
+                        <mat-icon>event</mat-icon>
+                        <span>الفعاليات</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/dashboard/trainings" routerLinkActive="active" class="nav-item">
+                        <mat-icon>school</mat-icon>
+                        <span>التدريبات</span>
                     </a>
                 </li>
                 <li>

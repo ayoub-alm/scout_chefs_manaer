@@ -41,35 +41,91 @@
 
   <!-- About Organization Section -->
   <section class="about-osm-section">
-    <div class="container about-container">
-      <div class="about-content">
-        <h2 class="section-title text-right">نبذة عن المنظمة</h2>
-        <div class="about-text">
-          <p class="about-description">
-            تأسست <strong>منظمة الكشاف المغربي</strong> سنة <strong>1969</strong> على إثر انشقاق جمعية الكشفية الحسنية،
-            على يد أطر أشرفت على حركة الكشافة المغربية منذ سنة 1933. حصلت المنظمة على الاعتراف الرسمي من السلطات
-            المغربية سنة <strong>1970</strong>، والتزمت منذ ذلك الحين بالعمل على نشر ممارسة الكشفية الحقيقية للجميع في
-            كافة أرجاء المملكة المغربية.
-          </p>
-          <p class="about-description">
-            لأجيال عديدة من المواطنين، كان للحركة الكشفية تأثير حاسم في حياتهم. من بين الشخصيات والقادة الذين مروا
-            بالحركة نجد: <strong>سي علال الفاسي، علال بن عبد الله، الشفشاوني، زرقطوني، محمد بوسطة، عباس الفاسي</strong>
-            وغيرهم.
-          </p>
-          <div class="stat-highlight">
-            <div class="stat-box">
-              <span class="stat-number">18,000+</span>
-              <span class="stat-label">منخرط</span>
+    <div class="about-container">
+      <div class="about-content-wrapper">
+        <div class="about-text-content">
+          <div class="about-header">
+            <span class="about-label">من نحن</span>
+            <h2 class="about-title">نبذة عن المنظمة</h2>
+            <p class="about-subtitle">
+              رحلة تربوية ممتدة منذ 1969 في خدمة الشباب المغربي
+            </p>
+          </div>
+
+          <div class="about-body">
+            <div class="about-story">
+              <div class="story-item">
+                <div class="story-icon">
+                  <mat-icon>history_edu</mat-icon>
+                </div>
+                <div class="story-content">
+                  <h3>التأسيس والانطلاقة</h3>
+                  <p>
+                    تأسست <strong>منظمة الكشاف المغربي</strong> سنة <strong>1969</strong> على يد أطر أشرفت على حركة
+                    الكشافة المغربية منذ سنة 1933. حصلت المنظمة على الاعتراف الرسمي من السلطات المغربية سنة
+                    <strong>1970</strong>، والتزمت منذ ذلك الحين بالعمل على نشر ممارسة الكشفية الحقيقية للجميع في كافة
+                    أرجاء المملكة المغربية.
+                  </p>
+                </div>
+              </div>
+
+              <div class="story-item">
+                <div class="story-icon">
+                  <mat-icon>stars</mat-icon>
+                </div>
+                <div class="story-content">
+                  <h3>إرث من القيادات</h3>
+                  <p>
+                    لأجيال عديدة من المواطنين، كان للحركة الكشفية تأثير حاسم في حياتهم. من بين الشخصيات والقادة الذين
+                    مروا بالحركة نجد: <strong>سي علال الفاسي، علال بن عبد الله، الشفشاوني، زرقطوني، محمد بوسطة، عباس
+                      الفاسي</strong> وغيرهم من الرموز الوطنية.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="stat-box">
-              <span class="stat-number">4,500+</span>
-              <span class="stat-label">قائد متطوع</span>
+
+            <div class="about-stats-modern">
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <mat-icon>groups</mat-icon>
+                </div>
+                <div class="stat-details">
+                  <span class="stat-value">18,000+</span>
+                  <span class="stat-description">منخرط نشط</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <mat-icon>volunteer_activism</mat-icon>
+                </div>
+                <div class="stat-details">
+                  <span class="stat-value">4,500+</span>
+                  <span class="stat-description">قائد متطوع</span>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon-wrapper">
+                  <mat-icon>calendar_today</mat-icon>
+                </div>
+                <div class="stat-details">
+                  <span class="stat-value">55+</span>
+                  <span class="stat-description">سنة من العطاء</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="about-image shine-effect">
-        <img src="/assets/images/community.png" alt="Scouts Community" class="rounded-lg shadow-xl">
+
+        <div class="about-visual">
+          <div class="about-image-wrapper">
+            <div class="image-decoration"></div>
+            <img src="/assets/images/community.png" alt="مجتمع الكشافة المغربية" class="about-main-image">
+            <div class="image-badge">
+              <mat-icon>verified</mat-icon>
+              <span>معترف بها رسمياً منذ 1970</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -362,39 +418,4 @@
     </div>
   </section>
 
-  <!-- Newsletter Section -->
-  <section class="newsletter-section">
-    <div class="newsletter-container">
-      <mat-icon class="newsletter-icon">mail</mat-icon>
-      <h2>ابق على اطلاع بأخبار المنظمة</h2>
-      <p>اشترك في نشرتنا الإخبارية لتصلك آخر الأنشطة والفعاليات الكشفية</p>
-      <div class="newsletter-form">
-        <mat-form-field appearance="outline" class="newsletter-input">
-          <mat-label>البريد الإلكتروني</mat-label>
-          <input matInput type="email" [(ngModel)]="email">
-          <mat-icon matPrefix>email</mat-icon>
-        </mat-form-field>
-        <button mat-raised-button color="accent" (click)="subscribeNewsletter()" [disabled]="!email">
-          <mat-icon>send</mat-icon>
-          اشترك الآن
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <h2>كن جزءا من منظمة الكشاف المغربي</h2>
-    <p>انضم إلى 18,000 كشاف و 4,500 قائد متطوع في خدمة الوطن والحركة الكشفية</p>
-    <div class="cta-actions">
-      <button mat-raised-button color="accent" routerLink="/join">
-        <mat-icon>how_to_reg</mat-icon>
-        انضم للمنظمة
-      </button>
-      <button mat-stroked-button class="white-stroked-btn" routerLink="/login">
-        <mat-icon>dashboard</mat-icon>
-        منصة SAHI الرقمية
-      </button>
-    </div>
-  </section>
 </main>
